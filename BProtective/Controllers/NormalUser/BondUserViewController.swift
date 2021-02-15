@@ -63,11 +63,11 @@ class BondUserViewController: UIViewController {
                     var saveDictionary: [Dictionary<String,String>] = []
                 
                     //save Data onto SELF
-                    var selfDict = [K.Databases.BondList.username : item.username, "Privacy" : "1" ]
+                    var selfDict = [K.Databases.BondList.username : item.username, "Privacy" : "1", "Foreign_Privacy" : "1" ]
                     appendDataSelf(dataList: selfDict)
                     
                     //save Data onto OTHER
-                    var otherDict = [K.Databases.InitiateBond.username: email, K.Databases.BondList.privacy: "1"]
+                    var otherDict = [K.Databases.InitiateBond.username: email, K.Databases.BondList.privacy: "1", "Foreign_Privacy" : "1"]
                     appendDataOther(dataList: otherDict, username: item.username)
             
                     errorMsg.textColor = UIColor.green
@@ -99,7 +99,7 @@ class BondUserViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let dat = ["Username" : "", "Privacy" : "" ]
+        let dat = ["Username" : "", "Privacy" : "", "Foreign_Privacy" : "" ]
         removeBlankBond(data: dat)
         // Do any additional setup after loading the view.
         title = K.Titles.bondUserTitle
@@ -142,7 +142,7 @@ class BondUserViewController: UIViewController {
                         }
                     }
                     print("Done")
-                    print(self.bondList)
+                    //print(self.bondList)
                 }
             }
         }

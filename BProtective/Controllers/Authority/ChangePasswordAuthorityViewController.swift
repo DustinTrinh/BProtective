@@ -17,6 +17,7 @@ class ChangePasswordAuthorityViewController: UIViewController {
     @IBOutlet weak var newPassInput: UITextField!
     @IBAction func changePasswordPressed(_ sender: Any) {
         if newPassInput.text == retypeNewPass.text{
+        
             let email = (Auth.auth().currentUser?.email)!
             let currentPassword = oldPassInput.text!
             let newPassword = retypeNewPass.text!

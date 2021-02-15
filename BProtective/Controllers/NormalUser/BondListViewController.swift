@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class BondListViewController: UIViewController, UITableViewDataSource {
+class BondListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     let db = Firestore.firestore()
@@ -22,6 +22,7 @@ class BondListViewController: UIViewController, UITableViewDataSource {
         // Do any additional setup after loading the view.
         title = K.Titles.bondListTitle
         tableView.dataSource = self
+        tableView.delegate = self
         refresh.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refresh.addTarget(self, action: #selector(self.refreshTable(_:)), for: .valueChanged)
         tableView.addSubview(refresh)
@@ -46,6 +47,11 @@ class BondListViewController: UIViewController, UITableViewDataSource {
                             bonds = saveData1 as! [Dictionary<String, String>]
                             
                             DispatchQueue.main.async {
+                                
+                                if(bonds.isEmpty){
+                                    let emp = ["Empty":"No bonds available"]
+                                    bonds.append(emp)
+                                }
                                 self.tableView.reloadData()
                                 let indexPath = IndexPath(row: self.bonds.count - 1, section: 0)
                                 self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
@@ -140,14 +146,24 @@ class BondListViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let usr = bonds[indexPath.row][K.Databases.BondList.username]
-       
         let cell = tableView.dequeueReusableCell(withIdentifier: K.Table.cellIdentifier, for: indexPath)
         cell.textLabel?.text = usr
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("\(bonds[indexPath.row]) clicked")
+        let vc = storyboard?.instantiateViewController(identifier: "BondDisplayViewController") as? BondDisplayViewController
+        vc?._username = bonds[indexPath.row][K.Databases.BondList.username] ?? ""
+        vc?.privacy = bonds[indexPath.row][K.Databases.BondList.privacy] ?? ""
+        vc?.fprivacy = bonds[indexPath.row][K.Databases.BondList.privacy] ?? ""
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let usr = bonds[indexPath.row][K.Databases.BondList.username]
+        
         if editingStyle == .delete {
                 bonds.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
@@ -158,4 +174,9 @@ class BondListViewController: UIViewController, UITableViewDataSource {
             
             }
     }
+ 
+    
+    
+    
+    
 }

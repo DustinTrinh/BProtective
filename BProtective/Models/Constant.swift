@@ -26,6 +26,7 @@ struct K {
         static let changePasswordSegue = "changePasswordSegue"
         static let changePasswordAuthorSegue = "AuthorPasswordChangeSegue"
         static let towardEmergencyPathSegue = "TowardEmergencyPath"
+        static let showBondSegue = "showBondSegue"
     }
     
     struct Titles{
@@ -56,6 +57,7 @@ struct K {
             static let status = "Status"
             static let UID = "UID"
             static let username = "Username"
+            static let banned = "Banned"
         }
         
         struct Authority {
@@ -90,6 +92,7 @@ struct K {
             static let username = "Username"
             static let bonds = "bonds"
             static let privacy = "Privacy"
+            static let fprivacy = "Foreign_Privacy"
         }
     }
     

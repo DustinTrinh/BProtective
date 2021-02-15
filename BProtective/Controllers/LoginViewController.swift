@@ -41,7 +41,7 @@ class LoginViewController: UIViewController {
                                         
                                         let saveData = document.data()
                                        
-                                        if(saveData["Role"] as! String == "User"){
+                                        if(saveData["Role"] as! String == "User" && (saveData["Banned"] != nil) == false){
                                             self.performSegue(withIdentifier: K.Segue.loginToMainSegue, sender: self)
                                         }
                                     }
@@ -60,7 +60,7 @@ class LoginViewController: UIViewController {
                                         
                                         let saveData = document.data()
                                        
-                                        if(saveData["Role"] as! String == "Authority"){
+                                        if(saveData["Role"] as! String == "Authority" && (saveData["Banned"] != nil) == false){
                                             self.performSegue(withIdentifier: K.Segue.loginToMainAuthoritySegue, sender: self)
                                         }
                                     }

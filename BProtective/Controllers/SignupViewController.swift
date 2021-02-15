@@ -37,7 +37,8 @@ class SignupViewController: UIViewController {
                             K.Databases.NormalUser.status: K.StatusUser.safe,
                             K.Databases.NormalUser.role: K.Roles.roleUser,
                             K.Databases.NormalUser.lat: storeUser.loc.lat,
-                            K.Databases.NormalUser.lon: storeUser.loc.lon
+                            K.Databases.NormalUser.lon: storeUser.loc.lon,
+                            K.Databases.NormalUser.banned: false
                         ]) { (error) in
                             if let e = error{
                                 print("Issue saving data into firestore: \(e)")
@@ -49,7 +50,7 @@ class SignupViewController: UIViewController {
                         
                         //Create blank template for BONDLIST
                         var empty : [Dictionary<String,String>] = []
-                        let emp = ["Username" : "", "Privacy" : ""]
+                        let emp = ["Username" : "", "Privacy" : "", "Foreign_Privacy" : ""]
                         empty.append(emp)
                         self.bondListTemplate(arr: empty, username: storeUser.email)
                     }

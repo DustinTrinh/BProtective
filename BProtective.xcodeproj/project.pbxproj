@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		233137BC2518530F00FF1658 /* BondUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233137BB2518530F00FF1658 /* BondUserViewController.swift */; };
 		233137BE2518533D00FF1658 /* BondListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233137BD2518533D00FF1658 /* BondListViewController.swift */; };
-		233137C02518536100FF1658 /* BondChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233137BF2518536100FF1658 /* BondChatViewController.swift */; };
-		233137C22518538900FF1658 /* BondPrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233137C12518538900FF1658 /* BondPrivacyViewController.swift */; };
 		233137C42518539F00FF1658 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233137C32518539F00FF1658 /* SettingsViewController.swift */; };
 		23443DC0251E1D8C00DB3413 /* AuthorityTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23443DBF251E1D8C00DB3413 /* AuthorityTabBarController.swift */; };
 		23443DC3251E1DEB00DB3413 /* AuthorityMainBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23443DC2251E1DEB00DB3413 /* AuthorityMainBarViewController.swift */; };
@@ -40,6 +38,7 @@
 		23FC82E025020EB00067C5DC /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FC82DF25020EB00067C5DC /* SignupViewController.swift */; };
 		23FC82E2250218A10067C5DC /* MainBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FC82E1250218A10067C5DC /* MainBarViewController.swift */; };
 		23FC82E425021AE10067C5DC /* UniversalTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FC82E325021AE10067C5DC /* UniversalTabBarController.swift */; };
+		23FE293925D8E37A00B1C2C6 /* BondDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FE293825D8E37A00B1C2C6 /* BondDisplayViewController.swift */; };
 		6D613A06B854100CCECB8CF7 /* Pods_BProtective.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11907EB171E9E65EC379D46B /* Pods_BProtective.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,8 +47,6 @@
 		11907EB171E9E65EC379D46B /* Pods_BProtective.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BProtective.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		233137BB2518530F00FF1658 /* BondUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BondUserViewController.swift; sourceTree = "<group>"; };
 		233137BD2518533D00FF1658 /* BondListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BondListViewController.swift; sourceTree = "<group>"; };
-		233137BF2518536100FF1658 /* BondChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BondChatViewController.swift; sourceTree = "<group>"; };
-		233137C12518538900FF1658 /* BondPrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BondPrivacyViewController.swift; sourceTree = "<group>"; };
 		233137C32518539F00FF1658 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		23443DBF251E1D8C00DB3413 /* AuthorityTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorityTabBarController.swift; sourceTree = "<group>"; };
 		23443DC2251E1DEB00DB3413 /* AuthorityMainBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorityMainBarViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +78,7 @@
 		23FC82DF25020EB00067C5DC /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		23FC82E1250218A10067C5DC /* MainBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBarViewController.swift; sourceTree = "<group>"; };
 		23FC82E325021AE10067C5DC /* UniversalTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalTabBarController.swift; sourceTree = "<group>"; };
+		23FE293825D8E37A00B1C2C6 /* BondDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BondDisplayViewController.swift; sourceTree = "<group>"; };
 		DAA93F148F4D4548DF8EC4A2 /* Pods-BProtective.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BProtective.release.xcconfig"; path = "Target Support Files/Pods-BProtective/Pods-BProtective.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,11 +101,10 @@
 				23FC82E1250218A10067C5DC /* MainBarViewController.swift */,
 				233137BB2518530F00FF1658 /* BondUserViewController.swift */,
 				233137BD2518533D00FF1658 /* BondListViewController.swift */,
-				233137BF2518536100FF1658 /* BondChatViewController.swift */,
-				233137C12518538900FF1658 /* BondPrivacyViewController.swift */,
 				233137C32518539F00FF1658 /* SettingsViewController.swift */,
 				23BFED0125331AF4006DDB70 /* ChangePasswordViewController.swift */,
 				23BFECFC2532EA48006DDB70 /* JustTesting.swift */,
+				23FE293825D8E37A00B1C2C6 /* BondDisplayViewController.swift */,
 			);
 			path = NormalUser;
 			sourceTree = "<group>";
@@ -241,7 +238,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1170;
-				LastUpgradeCheck = 1170;
+				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = DustyTheCutie;
 				TargetAttributes = {
 					2355C2592501FECF0005C230 = {
@@ -332,13 +329,13 @@
 				233137BC2518530F00FF1658 /* BondUserViewController.swift in Sources */,
 				23FC82E2250218A10067C5DC /* MainBarViewController.swift in Sources */,
 				23FC82DE25020E870067C5DC /* LoginViewController.swift in Sources */,
-				233137C02518536100FF1658 /* BondChatViewController.swift in Sources */,
 				23FC82E025020EB00067C5DC /* SignupViewController.swift in Sources */,
 				23FC82E425021AE10067C5DC /* UniversalTabBarController.swift in Sources */,
 				2355C2622501FECF0005C230 /* WelcomeViewController.swift in Sources */,
 				23443DC3251E1DEB00DB3413 /* AuthorityMainBarViewController.swift in Sources */,
 				233137C42518539F00FF1658 /* SettingsViewController.swift in Sources */,
 				235D455E25204417002FF27E /* BondInitiate.swift in Sources */,
+				23FE293925D8E37A00B1C2C6 /* BondDisplayViewController.swift in Sources */,
 				2381DE0A2527083000173245 /* Location.swift in Sources */,
 				2355C25E2501FECF0005C230 /* AppDelegate.swift in Sources */,
 				23BFED0225331AF4006DDB70 /* ChangePasswordViewController.swift in Sources */,
@@ -356,7 +353,6 @@
 				2381DE032526FEEB00173245 /* Authority.swift in Sources */,
 				23DCC2F22510D52B00E1C38F /* NormalUser.swift in Sources */,
 				23B748BF252C456A009FDAF7 /* Alarms.swift in Sources */,
-				233137C22518538900FF1658 /* BondPrivacyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +404,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -468,6 +465,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

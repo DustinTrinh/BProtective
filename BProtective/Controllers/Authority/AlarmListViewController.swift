@@ -26,7 +26,6 @@ class AlarmListViewController: UIViewController, UITableViewDataSource, UITableV
         tableView.dataSource = self
         tableView.delegate = self
         getEmergencyNames()
-        
         refresh.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refresh.addTarget(self, action: #selector(self.refreshTable(_:)), for: .valueChanged)
         tableView.addSubview(refresh)
