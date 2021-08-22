@@ -1,0 +1,23 @@
+.log {
+    border-style: solid; 
+    border-color: lightgray; 
+    background: white;
+    border-width: 1px; padding:5px; 
+    margin: 10px;
+    margin-left: 250px;
+    margin-right: 250px;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.type {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.h1 {
+    text-align: center;
+}

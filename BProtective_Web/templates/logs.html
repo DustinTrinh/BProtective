@@ -1,0 +1,12 @@
+{% extends "base-two.html" %}
+{% block title %} Activity Logs {% endblock %}
+{% block content %}
+<link rel="stylesheet" href="../static/logs.css">
+
+<div>
+    <h1>View Activity Logs</h1>
+    <a href='/accounts'>Return To View Accounts</a>
+        {{ ActivityLogsList | safe }}
+
+        {% endblock %}
+</div>

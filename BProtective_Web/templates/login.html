@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %} Login page {% endblock %}
+{% block content %}
+<h1>Please log into your account</h1>
+<form class="loginForm" action="/login" method="POST">
+    <label>Name:</label> <br />
+    <input type="email" name="name" /><br /><br />
+    <label>Password:</label><br />
+    <input type="password" name="passwd"><br /><br />
+    <input type="submit" value="Login" />
+    <button type="button"><a href=/passwordReset>Password Reset</a></button>
+    <button type="button"><a href=/signup>Sign Up</a></button>
+    
+</form>
+
+{% endblock %}

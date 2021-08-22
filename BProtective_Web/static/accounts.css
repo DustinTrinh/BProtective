@@ -1,0 +1,35 @@
+.account {
+    border-style: solid; 
+    border-color: lightgray; 
+    background: white;
+    border-width: 1px; padding:5px; 
+    margin: 10px;
+    margin-left: 250px;
+    margin-right: 250px;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.username {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 10px;
+}
+.log {
+    text-align: center;
+}
+.buttons {
+    text-align: center;
+}
+button {
+    margin: 5px;
+    border: 1px;
+    border-radius: 25px;
+    padding: 10px 15px;
+    background: darkblue;
+    color: white;
+}
+h1 {
+    text-align: center;
+}

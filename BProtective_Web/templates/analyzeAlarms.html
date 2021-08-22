@@ -1,0 +1,85 @@
+{% extends "base-two.html" %}
+{% block title %} Alarm Analysis {% endblock %}
+{% block content %}
+<link rel="stylesheet" href="../static/alarms.css">
+
+<h1>Alarm Analysis</h1>
+<a href='/home'>Return To Home</a>
+<div id="AlarmMap" style="text-align:center">
+    <iframe
+        id="mapFrame"
+        width="800"
+        height="600"
+        frameborder="1" style="border:5"
+        src="https://www.google.com/maps/embed/v1/view?key=AIzaSyCOjVztAz6_43E79q4T_TG8VBWJn_3LeGw&center=0,0&zoom=2">
+    </iframe>
+
+    <div id='dispAlarm' style='display: none;'>
+        <div id='dispUser'>User</div>
+        <div id='dispStatus'>Status</div>
+        <div id='dispDate'>Date</div>
+        <button onclick="getInRange()">Get Alarms Within 50km</button>
+        <button onclick="scrollToSavedAlarm()">Scroll to this alarm</button>
+    </div>
+    
+    <div id='alarmList'>
+        {{AlarmList | safe}}
+    </div>
+
+    <button onclick="scrollToTop()">To Top</button>
+
+</div>
+
+<script>
+    var savedId = '';
+    var alarmName = '';
+    var alarmStatus = '';
+    var alarmDate = '';
+
+    function changeMap(lat, long, div, name, status) {
+        var mapUrl = 'https://www.google.com/maps/embed/v1/place?key=AIzaSyCOjVztAz6_43E79q4T_TG8VBWJn_3LeGw&q=' + lat + ',' + long + '&zoom=9';
+        document.getElementById('mapFrame').src = mapUrl;
+
+        savedId = div.id;
+        alarmName = document.getElementById(savedId).getElementsByClassName('username')[0].getElementsByClassName('data')[0].innerHTML;
+        alarmStatus = document.getElementById(savedId).getElementsByClassName('status')[0].getElementsByClassName('data')[0].innerHTML;
+        alarmDate = document.getElementById(savedId).getElementsByClassName('date')[0].getElementsByClassName('data')[0].innerHTML;
+        console.log('date: ' + alarmDate);
+        scrollToTop();
+        showAlertInfo();
+    }
+
+    function showAlertInfo() {
+        document.getElementById('dispAlarm').style.display = 'block';
+        document.getElementById('dispUser').innerHTML = ('User: ' + alarmName);
+        document.getElementById('dispStatus').innerHTML = ('Status: ' + alarmStatus);
+        document.getElementById('dispDate').innerHTML = ('Date: ' + alarmDate);
+        document.getElementById('dispAlarm').style.background = "rgb(0, 153, 255)";
+        setTimeout(function() {
+            document.getElementById('dispAlarm').style.background = "white";
+        }, 1000);
+    }
+
+    function scrollToTop() {
+        document.getElementById('AlarmMap').scrollIntoView({behavior: "smooth"});
+    }
+
+    function scrollToSavedAlarm() {
+        document.getElementById('dispAlarm').style.display = 'none';
+        var mapUrl = "https://www.google.com/maps/embed/v1/view?key=AIzaSyCOjVztAz6_43E79q4T_TG8VBWJn_3LeGw&center=0,0&zoom=2";
+        document.getElementById('mapFrame').src = mapUrl;
+
+        console.log('id is ' + savedId);
+        document.getElementById(savedId).scrollIntoView({behavior: "smooth", block: 'center', inline: 'center'});
+        document.getElementById(savedId).style.background = "rgb(0, 153, 255)";
+        setTimeout(function() {
+            document.getElementById(savedId).style.background = "white";
+        }, 1000);
+    }
+
+    function getInRange() {
+        var limit = window.location.href;
+        window.location.href = "/analyzeAlarms/id=" + savedId + "&range=50&limit=0";
+    }
+
+</script>{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base-two.html" %}
+{% block title %} Accounts {% endblock %}
+{% block content %}
+<!--<link rel="stylesheet" href="../static/accounts.css">-->
+<link rel="stylesheet" href="https://bprotective-web.herokuapp.com/static/accounts.css">
+
+<div>
+    <h1>View Accounts</h1>
+    <a href='/home'>Return To Home</a>
+
+    {{AccountList | safe}}
+
+{% endblock %}
+</div>

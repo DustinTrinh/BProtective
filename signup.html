@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %} Login page {% endblock %}
+{% block content %}
+<h1>Testing the login page</h1>
+<!-- TO DO: COMPLETE USER FUNCTIONALITY AND CHANGE THE ACTION TO DIRECT TO THE USER FUNCTIONS PAGE -->
+<!-- TO DO: READD " method="POST" "" AFTER FORM ACTION ONCE FUNCTIONALITY TO SIGN IN IS COMPLETE -->
+<form action="/signup" method='post' role="form">
+    <label>Name:</label> <br />
+    <input type="text" name="userName" /><br /><br />
+    <label>Role:</label> <br />
+    <input type="text" name="userRole" /><br /><br />
+    <label>Password:</label><br />
+    <input type="password" name="password"><br /><br />
+    <label>Confirm Password:</label><br />
+    <input type="password" name="confirmPassword"><br /><br />
+    <input type="submit" value="Sign up" />
+</form>
+{% endblock %}
